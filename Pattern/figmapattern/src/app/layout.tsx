@@ -14,7 +14,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="bg">
       <body className="flex flex-col min-h-screen">
         <Header />
-        <SearchBar />
         <main className="flex-grow bg-gray-100 p-6">{children}</main>
         <Footer />
       </body>
