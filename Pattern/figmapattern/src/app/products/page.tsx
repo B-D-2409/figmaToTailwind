@@ -4,6 +4,7 @@ import Typography from "@/components/shared/typography";
 import Button from "@/components/shared/buttons";
 import { products as allProducts } from "@/components/shared/products";
 import ProductCard from "@/components/shared/product-card";
+import FeaturesSection from "@/app/features-section/page";
 
 const ProductsPage = () => {
     const featuredProduct = allProducts[0];
@@ -80,6 +81,7 @@ const ProductsPage = () => {
                             />
                         ))}
                     </div>
+                        <FeaturesSection />
                 </div>
             </div>
         </>
