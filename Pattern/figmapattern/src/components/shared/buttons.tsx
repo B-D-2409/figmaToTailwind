@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({
     type = "button",
     className = "",
     size = "md",
-    variant = "primary",
+    variant = "ghost", // По подразбиране за хедъра
     radius = "2xl",
 }) => {
     const sizeClass = {
@@ -27,15 +27,13 @@ const Button: React.FC<ButtonProps> = ({
         xl: "px-6 py-4 text-xl",
     }[size];
 
-
     const variantClass = {
-        primary: "bg-blue-600 text-white hover:bg-blue-600",
+        primary: "bg-blue-600 text-white hover:bg-blue-700",
         secondary: "bg-gray-600 text-white hover:bg-gray-800",
         accent: "bg-amber-500 text-black hover:bg-amber-500",
-        ghost: "bg-transparent text-black hover:bg-gray-400",
+        ghost: "bg-transparent text-inherit hover:text-blue-600",
         outline: "border border-gray-600 text-gray-600 hover:bg-gray-300",
     }[variant];
-
 
     const radiusClass = {
         none: "rounded-none",
