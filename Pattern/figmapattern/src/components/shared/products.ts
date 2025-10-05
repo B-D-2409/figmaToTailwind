@@ -1,7 +1,7 @@
 export const products = [
     {
         id: 1,
-        name: "Ефектни висящи обеци 'Гбки'",
+        name: "Ефектни висящи обеци 'Гъбки'",
         price: "30.00 лв",
         image: "/products/earrings1.jpg",
         description:
