@@ -1,90 +1,85 @@
 "use client";
 import React from "react";
-import Button from "@/components/shared/buttons";
 import Typography from "@/components/shared/typography";
-import { useRouter } from "next/navigation";
+import Button from "@/components/shared/buttons";
 
 interface ProductCardProps {
-    id: string | number;
     name: string;
     price: string;
     image: string;
+    images?: string[];
     description?: string;
-    category?: string;
-    manufacturer?: string;
     material?: string;
     size?: string;
     reviews?: number;
+    isFeatured?: boolean; // за featured продукта
+    onBuy?: () => void;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
-    id,
     name,
     price,
     image,
+    images,
     description,
-    category,
-    manufacturer,
     material,
     size,
     reviews,
+    isFeatured,
+    onBuy,
 }) => {
-    const router = useRouter();
-
-    const handleClick = () => {
-        router.push(`/products/${id}`);
-    };
-
     return (
-        <div
-            onClick={handleClick}
-            className="cursor-pointer flex flex-col md:flex-row w-full border rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-200 bg-white dark:bg-gray-800"
-        >
-            {/* Image */}
-            <div className="w-full md:w-1/2 h-64 md:h-auto flex-shrink-0">
-                <img src={image} alt={name} className="w-full h-full object-cover" />
+        <div className={`flex ${isFeatured ? "flex-col lg:flex-row gap-6" : "flex-col"} `}>
+            {/* Лява част - за featured продукта показваме голямата снимка и малките под нея */}
+            <div className={`${isFeatured ? "flex-1 flex flex-col gap-2" : "flex flex-col items-center gap-1"} `}>
+                <img
+                    src={image}
+                    alt={name}
+                    className={`${isFeatured ? "w-full h-auto rounded-lg object-cover" : "w-full h-32 object-cover rounded-md"}`}
+                />
+
+                {images && images.length > 0 && (
+                    <div className={`${isFeatured ? "flex gap-2 mt-2 w-full" : "flex gap-2 mt-2 w-full justify-center"}`}>
+                        {images.map((img, index) => (
+                            <img
+                                key={index}
+                                src={img}
+                                alt={`${name} ${index + 1}`}
+                                className={`${isFeatured ? "flex-1 h-20 sm:h-24 object-cover rounded-md border border-gray-300" : "h-20 sm:h-24 object-cover rounded-md border border-gray-300"}`}
+                            />
+                        ))}
+                    </div>
+                )}
             </div>
 
-            {/* Info */}
-            <div className="w-full md:w-1/2 p-6 flex flex-col gap-3">
-                <Typography variant="heading">{name}</Typography>
+            {/* Дясна част за featured */}
+            {isFeatured && (
+                <div className="flex-1 flex flex-col gap-4">
+                    <Typography variant="heading" className="text-2xl font-bold">
+                        {name}
+                    </Typography>
+                    <Typography className="text-gray-500">Цена: {price}</Typography>
+                    {description && <Typography className="text-gray-700">{description}</Typography>}
+                    {material && <Typography className="text-gray-500">Материал: {material}</Typography>}
+                    {size && <Typography className="text-gray-500">Размер: {size}</Typography>}
+                    {reviews !== undefined && <Typography className="text-gray-500">{reviews} Отзива</Typography>}
 
-                {category && (
-                    <Typography variant="subheading" className="text-gray-500 dark:text-gray-400">
-                        Категория: {category}
-                    </Typography>
-                )}
-                {manufacturer && (
-                    <Typography variant="body" className="text-gray-600 dark:text-gray-300">
-                        Производител: {manufacturer}
-                    </Typography>
-                )}
-                {description && <Typography variant="body">{description}</Typography>}
-                {material && (
-                    <Typography variant="body" className="text-gray-600 dark:text-gray-300">
-                        Материал: {material}
-                    </Typography>
-                )}
-                {size && (
-                    <Typography variant="body" className="text-gray-600 dark:text-gray-300">
-                        Размер: {size}
-                    </Typography>
-                )}
-                {reviews !== undefined && (
-                    <Typography variant="body" className="text-gray-600 dark:text-gray-300">
-                        {reviews} Отзива
-                    </Typography>
-                )}
-
-                <div className="mt-auto flex flex-wrap gap-3">
-                    <Button size="sm" variant="primary" radius="xl">
-                        Виж детайли
-                    </Button>
-                    <Button size="sm" variant="outline" radius="xl">
-                        Добави в количка
+                    <Button variant="purple" className="w-fit px-6 py-2" onClick={onBuy}>
+                        Поръчай сега
                     </Button>
                 </div>
-            </div>
+            )}
+
+            {/* За подобни продукти */}
+            {!isFeatured && (
+                <>
+                    <Typography className="text-sm font-semibold text-center mt-1">{name}</Typography>
+                    <Typography className="text-sm text-gray-500 text-center">{price}</Typography>
+                    <Button variant="purple" className="w-full px-3 py-1 text-xs mt-1" onClick={onBuy}>
+                        Купи Сега
+                    </Button>
+                </>
+            )}
         </div>
     );
 };

@@ -21,7 +21,7 @@ function Header() {
     const [mobileMenu, setMobileMenu] = useState(false);
     const [searchFocused, setSearchFocused] = useState(false);
     const router = useRouter();
-    const cartCount = 1; 
+    const cartCount = 1;
 
     const handleLinkClick = (href: string) => router.push(href);
     const handleSearch = () => {
@@ -86,9 +86,9 @@ function Header() {
                     </Button>
                 </div>
 
+                {/* ✅ Mobile header */}
                 <div className="flex items-center md:hidden w-full">
- 
-                    <div className={`flex-1 relative transition-all duration-200 ${searchFocused ? "mr-0" : "mr-2"}`}>
+                    <div className="flex-1 relative transition-all duration-200">
                         <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
                         <input
                             type="text"
@@ -96,7 +96,7 @@ function Header() {
                             onChange={(e) => setSearch(e.target.value)}
                             onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                             onFocus={() => setSearchFocused(true)}
-                            onBlur={() => setSearchFocused(false)}
+                            onBlur={() => setTimeout(() => setSearchFocused(false), 150)}
                             placeholder="Търси тук..."
                             className={`w-full pl-9 pr-1 py-1 text-sm border border-gray-300 dark:border-gray-700 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200`}
                         />
@@ -152,4 +152,3 @@ function Header() {
 }
 
 export default Header;
-
