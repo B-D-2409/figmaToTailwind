@@ -59,8 +59,10 @@ function Header() {
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                             onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-                            placeholder="Търси..."
-                            className="w-full border border-gray-300 dark:border-gray-700 rounded-full px-3 py-1 text-sm bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            onFocus={() => setSearchFocused(true)}
+                            onBlur={() => setSearchFocused(false)}
+                            placeholder="Търси тук..."
+                            className={`w-full pl-8 pr-1 py-1 text-sm border border-gray-300 dark:border-gray-700 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200`}
                         />
                     </div>
 
