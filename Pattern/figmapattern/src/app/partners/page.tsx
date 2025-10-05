@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Typography from "@/components/shared/typography";
 import Image from "next/image";
@@ -15,7 +14,6 @@ const partners = [
 const PartnersPage = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-16 px-6 flex flex-col items-center">
-            {/* Заглавие */}
             <Typography
                 variant="heading"
                 className="text-center text-3xl md:text-4xl font-semibold mb-6"
@@ -30,7 +28,6 @@ const PartnersPage = () => {
                 Работим с водещи компании, които споделят нашите ценности и стремеж към качество.
             </Typography>
 
-            {/* Grid с лога */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 max-w-6xl w-full place-items-center">
                 {partners.map((partner) => (
                     <div
@@ -48,7 +45,6 @@ const PartnersPage = () => {
                 ))}
             </div>
 
-            {/* CTA секция */}
             <div className="mt-20 text-center max-w-3xl">
                 <Typography
                     variant="subheading"

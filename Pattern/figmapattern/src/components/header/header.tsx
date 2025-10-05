@@ -11,7 +11,7 @@ const navLinks = [
     { href: "/special-request", label: "Специален Допит" },
     { href: "/partners", label: "Партньори" },
     { href: "/corporate-clients", label: "Корпоративни Клиенти" },
-    { href: "/contact", label: "Контакти" },
+    { href: "/contacts", label: "Контакти" },
 ];
 
 export default function Header() {

@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Typography from "@/components/shared/typography";
 import Button from "@/components/shared/buttons";
@@ -7,7 +6,7 @@ import { Building2, Users, Gift } from "lucide-react";
 const CorporateClientsPage = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-16 px-6 flex flex-col items-center">
-            {/* Заглавие */}
+        
             <Typography
                 variant="heading"
                 className="text-center text-3xl md:text-4xl font-semibold mb-6"
@@ -21,7 +20,7 @@ const CorporateClientsPage = () => {
                 Нашите корпоративни клиенти получават персонализирани предложения, отстъпки и възможности за дългосрочно партньорство.
             </Typography>
 
-            {/* Картички с предимства */}
+        
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full mb-16">
                 <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-all duration-300">
                     <Building2 className="w-10 h-10 text-blue-500 mx-auto mb-4" />
@@ -54,7 +53,6 @@ const CorporateClientsPage = () => {
                 </div>
             </div>
 
-            {/* CTA секция */}
             <div className="bg-blue-600 dark:bg-blue-700 text-white py-12 px-8 rounded-2xl shadow-xl text-center max-w-5xl w-full">
                 <Typography
                     variant="heading"

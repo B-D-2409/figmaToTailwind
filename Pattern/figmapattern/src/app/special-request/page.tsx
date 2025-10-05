@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Typography from "@/components/shared/typography";
 import Button from "@/components/shared/buttons";
@@ -7,7 +6,7 @@ const SpecialRequestPage = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-6">
             <div className="w-full max-w-3xl bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 md:p-10 border border-gray-200 dark:border-gray-700">
-                {/* Header */}
+            
                 <Typography
                     variant="heading"
                     className="text-center text-3xl md:text-4xl font-semibold mb-6"
@@ -22,7 +21,7 @@ const SpecialRequestPage = () => {
                     Нашият екип ще се свърже с вас възможно най-скоро.
                 </Typography>
 
-                {/* Form */}
+            
                 <form className="space-y-6">
                     <div>
                         <label className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">
