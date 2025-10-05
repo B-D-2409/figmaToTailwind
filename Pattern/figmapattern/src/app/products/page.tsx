@@ -1,23 +1,21 @@
 "use client";
 import { useState } from "react";
-import ProductCard from "@/components/shared/product-card";
 import Typography from "@/components/shared/typography";
-import { products as allProducts } from "@/components/shared/products";
 import Button from "@/components/shared/buttons";
+import { products as allProducts } from "@/components/shared/products";
 
 const ProductsPage = () => {
     const featuredProduct = allProducts[0];
     const otherProducts = allProducts.slice(1);
 
-    const similarProducts = allProducts.slice(1);
-    const itemsPerPage = 4; // по 4 на ред
+    const itemsPerPage = 4;
     const [currentPage, setCurrentPage] = useState(0);
-    const pageCount = Math.ceil(similarProducts.length / itemsPerPage);
+    const pageCount = Math.ceil(otherProducts.length / itemsPerPage);
 
     const handlePrev = () => setCurrentPage((prev) => Math.max(prev - 1, 0));
     const handleNext = () => setCurrentPage((prev) => Math.min(prev + 1, pageCount - 1));
 
-    const paginatedProducts = similarProducts.slice(
+    const paginatedProducts = otherProducts.slice(
         currentPage * itemsPerPage,
         currentPage * itemsPerPage + itemsPerPage
     );
@@ -47,22 +45,6 @@ const ProductsPage = () => {
                         <Button variant="purple" className="w-fit px-6 py-2">
                             Поръчай сега
                         </Button>
-
-                        <div className="flex flex-col gap-0 mt-4 w-full max-w-md text-sm border border-gray-300 dark:border-gray-700 rounded-3xl bg-gray-50 dark:bg-gray-800 overflow-hidden">
-                            <div className="p-3 border-b border-gray-300 dark:border-gray-700">
-                                <Typography className="font-semibold mb-1">Доставка над 50лв</Typography>
-                                <Typography className="text-gray-500 text-xs">
-                                    Безплатна доставка при поръчка над 50лв.
-                                </Typography>
-                            </div>
-
-                            <div className="p-3">
-                                <Typography className="font-semibold mb-1">Връщане на доставка</Typography>
-                                <Typography className="text-gray-500 text-xs">
-                                    Безплатно 30-дневно връщане. Подробности.
-                                </Typography>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -73,25 +55,13 @@ const ProductsPage = () => {
                 </Typography>
 
                 <div className="absolute top-0 right-[232px] flex gap-2">
-                    <Button
-                        onClick={handlePrev}
-                        className="p-2 rounded-4xl"
-                        disabled={currentPage === 0}
-                        variant="purple"
-                    >
+                    <Button onClick={handlePrev} disabled={currentPage === 0} variant="purple">
                         &lt;
                     </Button>
-                    <Button
-                        onClick={handleNext}
-                        className="p-2 rounded-4xl"
-                        disabled={currentPage === pageCount - 1}
-                        variant="purple"
-                    >
+                    <Button onClick={handleNext} disabled={currentPage === pageCount - 1} variant="purple">
                         &gt;
                     </Button>
                 </div>
-
-
 
                 <div className="flex gap-4 overflow-x-auto mt-8">
                     {paginatedProducts.map((product) => (
