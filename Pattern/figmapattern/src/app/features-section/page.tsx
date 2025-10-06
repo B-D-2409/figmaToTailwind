@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import Typography from "@/components/shared/typography";
 import { Handshake, Lightbulb, Award } from "lucide-react";
@@ -63,9 +64,11 @@ const FeaturesSection: React.FC = () => {
                 </div>
 
                 <div className="mt-6">
+                    <Link href='/products' className="text-blue-600 hover:underline font-medium">
                     <span className="px-8 py-3 bg-blue-600 text-white text-5xl font-bold rounded-full transform -rotate-3 inline-block">
                         Great<span className="text-white text-3xl font-normal">.bg</span>   
                     </span>
+                    </Link>
                     <span className="absolute  top-2/3 -translate-y-1/2 text-5xl font-bold text-gray-800">
                         ?
                     </span>

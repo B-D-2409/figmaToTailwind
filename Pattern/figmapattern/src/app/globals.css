@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* CSS променливи за светъл/тъмен режим */
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
