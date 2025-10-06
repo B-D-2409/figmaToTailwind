@@ -36,7 +36,7 @@ const FeaturesSection: React.FC = () => {
                     >
                         С какво се различаваме
                         <svg
-                            className="absolute top-1/2 left-full ml-2 transform -translate-y-3 w-36 h-36"
+                            className="absolute top-1/2 left-full ml-1 sm:ml-2 transform -translate-y-3 w-28 sm:w-36 h-28 sm:h-36"
                             fill="none"
                             viewBox="0 0 100 100"
                         >

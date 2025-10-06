@@ -86,7 +86,7 @@ function MainPage() {
                     <FeaturesSection />
                 </div>
                 <Feedback />
-            <GiftPage />
+                <GiftPage />
             </div>
         </>
     );
