@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { Search, Menu, X, User, ShoppingBag } from "lucide-react";
 import { GiftHeart } from "../shared/gift-icon";
 import Button from "../shared/buttons";
@@ -38,18 +38,26 @@ function Header() {
                         Great.bg
                     </h1>
                 </Link>
-
                 <nav className="hidden md:flex items-center gap-2">
-                    {navLinks.map((link) => (
-                        <Button
-                            key={link.href}
-                            onClick={() => handleLinkClick(link.href)}
-                            className="text-sm font-medium text-gray-800 dark:text-gray-200 transition-colors"
-                        >
-                            {link.label}
-                        </Button>
-                    ))}
+                    {navLinks.map((link) => {
+                        const pathname = usePathname();
+                        const isActive = pathname === link.href;
+
+                        return (
+                            <Link key={link.href} href={link.href} passHref>
+                                <Button
+                                    variant="secondary"
+                                    className={`text-sm font-medium transition-colors ${isActive ? "text-black dark:text-white font-bold" : "text-gray-400 dark:text-gray-500"
+                                        }`}
+                                >
+                                    {link.label}
+                                </Button>
+                            </Link>
+                        );
+                    })}
                 </nav>
+
+
 
                 <div className="hidden md:flex items-center gap-1">
                     <div className="relative w-[180px]">
@@ -62,7 +70,7 @@ function Header() {
                             onFocus={() => setSearchFocused(true)}
                             onBlur={() => setSearchFocused(false)}
                             placeholder="Търси тук..."
-                            className={`w-full pl-8 pr-1 py-1 text-sm border border-gray-300 dark:border-gray-700 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200`}
+                            className="w-full pl-8 pr-1 py-1 text-sm border border-gray-300 dark:border-gray-700 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
                         />
                     </div>
 
@@ -97,7 +105,7 @@ function Header() {
                             onFocus={() => setSearchFocused(true)}
                             onBlur={() => setTimeout(() => setSearchFocused(false), 150)}
                             placeholder="Търси тук..."
-                            className={`w-full pl-9 pr-1 py-1 text-sm border border-gray-300 dark:border-gray-700 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200`}
+                            className="w-full pl-9 pr-1 py-1 text-sm border border-gray-300 dark:border-gray-700 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
                         />
                     </div>
 
@@ -135,19 +143,28 @@ function Header() {
 
             {mobileMenu && (
                 <div className="md:hidden bg-white dark:bg-gray-900 shadow-md px-4 py-3 flex flex-col gap-2">
-                    {navLinks.map((link) => (
-                        <Button
-                            key={link.href}
-                            onClick={() => handleLinkClick(link.href)}
-                            className="text-left text-gray-800 dark:text-gray-200 transition-colors w-full bg-transparent px-0 py-0"
-                        >
-                            {link.label}
-                        </Button>
-                    ))}
+                    {navLinks.map((link) => {
+                        const pathname = usePathname();
+                        const isActive = pathname === link.href;
+
+                        return (
+                            <Link key={link.href} href={link.href} passHref>
+                                <Button
+                                    className={`text-left w-full bg-transparent px-0 py-0 transition-colors ${isActive ? "text-black font-bold" : "text-gray-400"
+                                        }`}
+                                    variant="secondary"
+                                >
+                                    {link.label}
+                                </Button>
+                            </Link>
+                        );
+                    })}
                 </div>
             )}
+
         </header>
     );
+
 }
 
 export default Header;

@@ -85,7 +85,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
                         </div>
                     )}
 
-                    {/* COLOR SELECTOR */}
                     <div>
                         <Typography className="text-sm font-semibold mb-1">Изберете цвят</Typography>
                         <div className="flex gap-3">
@@ -102,7 +101,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                         </div>
                     </div>
 
-                    {/* SIZE SELECTOR */}
+
                     <div>
                         <Typography className="text-sm font-semibold mb-1">Изберете размер</Typography>
                         <div className="flex flex-wrap gap-2">
