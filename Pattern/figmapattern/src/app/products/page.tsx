@@ -5,6 +5,7 @@ import Button from "@/components/shared/buttons";
 import { products as allProducts } from "@/components/shared/products";
 import ProductCard from "@/components/shared/product-card";
 import FeaturesSection from "@/app/features-section/page";
+import Feedback from "../feedback/page";
 
 const ProductsPage = () => {
     const featuredProduct = allProducts[0];
@@ -56,10 +57,10 @@ const ProductsPage = () => {
                     </Typography>
 
                     <div className="flex gap-2 lg:absolute lg:top-0 lg:left-[calc(100%-110px)] lg:transform lg:-translate-x-[26px] lg:-translate-y-1">
-                        <Button onClick={handlePrev} disabled={currentPage === 0} variant="purple">
+                        <Button onClick={handlePrev} disabled={currentPage === 0} variant="purple" radius="full">
                             &lt;
                         </Button>
-                        <Button onClick={handleNext} disabled={currentPage === pageCount - 1} variant="purple">
+                        <Button onClick={handleNext} disabled={currentPage === pageCount - 1} variant="purple" radius="full">
                             &gt;
                         </Button>
                     </div>
@@ -83,6 +84,7 @@ const ProductsPage = () => {
                     </div>
                         <FeaturesSection />
                 </div>
+                <Feedback />
             </div>
         </>
     );
