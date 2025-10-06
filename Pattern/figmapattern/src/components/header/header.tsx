@@ -8,7 +8,7 @@ import { GiftHeart } from "../shared/gift-icon";
 import Button from "../shared/buttons";
 
 const navLinks = [
-    { href: "/products", label: "Продукти" },
+    { href: "/main-page", label: "Продукти" },
     { href: "/blog", label: "Блог" },
     { href: "/special-request", label: "Специален Допит" },
     { href: "/partners", label: "Партньори" },
@@ -32,7 +32,7 @@ function Header() {
     return (
         <header className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50">
             <div className="max-w-[1400px] mx-auto flex items-center justify-between gap-2 px-4 py-3">
-                <Link href="/products" className="ml-auto flex items-center gap-2 cursor-pointer">
+                <Link href="/main-page" className="ml-auto flex items-center gap-2 cursor-pointer">
                     <GiftHeart size={36} />
                     <h1 className="text-2xl font-bold text-gray-900 dark:text-white hover:text-blue-600 transition-colors">
                         Great.bg
@@ -86,7 +86,6 @@ function Header() {
                     </Button>
                 </div>
 
-                {/* ✅ Mobile header */}
                 <div className="flex items-center md:hidden w-full">
                     <div className="flex-1 relative transition-all duration-200">
                         <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />

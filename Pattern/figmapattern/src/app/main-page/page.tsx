@@ -6,8 +6,9 @@ import { products as allProducts } from "@/components/shared/products";
 import ProductCard from "@/components/shared/product-card";
 import FeaturesSection from "@/app/features-section/page";
 import Feedback from "../feedback/page";
+import GiftPage from "../gift-page/page";
 
-const ProductsPage = () => {
+function MainPage() {
     const featuredProduct = allProducts[0];
     const otherProducts = allProducts.slice(1);
 
@@ -16,7 +17,7 @@ const ProductsPage = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setItemsPerPage(window.innerWidth < 1024 ? 3 : 5); 
+            setItemsPerPage(window.innerWidth < 1024 ? 3 : 5);
         };
         handleResize();
         window.addEventListener("resize", handleResize);
@@ -82,12 +83,13 @@ const ProductsPage = () => {
                             />
                         ))}
                     </div>
-                        <FeaturesSection />
+                    <FeaturesSection />
                 </div>
                 <Feedback />
+            <GiftPage />
             </div>
         </>
     );
 };
 
-export default ProductsPage;
+export default MainPage;
