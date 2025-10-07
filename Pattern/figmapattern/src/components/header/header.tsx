@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { Search, Menu, X, User, ShoppingBag } from "lucide-react";
-import { GiftHeart } from "../shared/gift-icon";
+import  Logo  from "../shared/gift-icon";
 import Button from "../shared/buttons";
 
 const navLinks = [
@@ -23,7 +23,6 @@ function Header() {
     const router = useRouter();
     const cartCount = 1;
 
-    const handleLinkClick = (href: string) => router.push(href);
     const handleSearch = () => {
         if (search.trim())
             router.push(`/search?query=${encodeURIComponent(search)}`);
@@ -33,7 +32,7 @@ function Header() {
         <header className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50">
             <div className="max-w-[1400px] mx-auto flex items-center justify-between gap-2 px-4 py-3">
                 <Link href="/main-page" className="ml-auto flex items-center gap-2 cursor-pointer">
-                    <GiftHeart size={36} />
+                    <Logo size={36} />
                     <h1 className="text-2xl font-bold text-gray-900 dark:text-white hover:text-blue-600 transition-colors">
                         Great.bg
                     </h1>

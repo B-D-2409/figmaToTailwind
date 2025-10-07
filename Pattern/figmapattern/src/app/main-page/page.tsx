@@ -7,6 +7,8 @@ import ProductCard from "@/components/shared/product-card";
 import FeaturesSection from "@/app/features-section/page";
 import Feedback from "../feedback/page";
 import GiftPage from "../gift-page/page";
+import Footer from "@/components/footer/footer";
+import GiftPageBlue from "@/app/gift-blue-page/page.";
 
 function MainPage() {
     const featuredProduct = allProducts[0];
@@ -86,7 +88,9 @@ function MainPage() {
                     <FeaturesSection />
                 </div>
                 <Feedback />
+                <GiftPageBlue />
                 <GiftPage />
+                <Footer />
             </div>
         </>
     );
