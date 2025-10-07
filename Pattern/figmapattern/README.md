@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Great.bg - Jewelry Products Showcase
+
+**Description:**  
+Great.bg is a modern web application built with **Next.js** and **Tailwind CSS** to showcase a variety of jewelry products, including earrings, necklaces, bracelets, and other accessories.
+
+## Figma Design
+The original Figma design file can be accessed here:  
+[Figma Design for Great.bg](https://www.figma.com/design/IewHNgfcykduIDA5KT1rMm/Great.bg?node-id=315-698&t=dBBJSEJup8f1IpDo-1)
+
+## Demo
+![Great.bg Screenshot](/screenshot-greatbg.jpg)
+
+
+
+## Technologies
+- **Next.js** - React framework for server-side rendering and routing
+- **React** - For building interactive UI components
+- **Tailwind CSS** - Utility-first CSS framework for styling
+- **Node.js** - Backend runtime environment
+
+## Features
+- Product listing page for jewelry items
+- Responsive design following Figma mockup
+- Reusable React components for products, headers, and navigation
+- Clean project structure following Next.js conventions
+- High fidelity to design: spacing, typography, colors,buttons, and images
 
 ## Getting Started
 
-First, run the development server:
+To run this project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository:
+   ```bash
+   git clone <[Great.bg-Repository](https://github.com/B-D-2409/figmaToTailwind)>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   2. Navigate to the project folder:
+   ```bash
+   cd src
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Learn More
+   4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   5. Open your browser and visit:
+   ```bash
+   http://localhost:3000
+   ```
+   The page should now be running locally!
