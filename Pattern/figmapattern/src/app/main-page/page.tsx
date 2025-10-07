@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import Typography from "@/components/shared/typography";
+import { Typography } from "@/components/shared/typography";
 import Button from "@/components/shared/buttons";
 import { products as allProducts } from "@/components/shared/products";
 import ProductCard from "@/components/shared/product-card";
@@ -9,6 +9,24 @@ import Feedback from "../feedback/page";
 import GiftPage from "../gift-page/page";
 import Footer from "@/components/footer/footer";
 import GiftPageBlue from "@/app/gift-blue-page/page.";
+/**
+ * MainPage Component
+ *
+ * Responsible for rendering the main shop page:
+ * - Displays a featured product at the top
+ * - Shows a carousel of similar products with navigation buttons
+ * - Includes sections: Features, Feedback, GiftPageBlue, GiftPage, and Footer
+ *
+ * @component
+ * @example
+ * import MainPage from "@/app/main-page/page";
+ *
+ * function App() {
+ *   return <MainPage />;
+ * }
+ *
+ * @returns {JSX.Element} The rendered main shop page
+ */
 
 function MainPage() {
     const featuredProduct = allProducts[0];
@@ -88,8 +106,11 @@ function MainPage() {
                     <FeaturesSection />
                 </div>
                 <Feedback />
+
                 <GiftPageBlue />
+
                 <GiftPage />
+                
                 <Footer />
             </div>
         </>

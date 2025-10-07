@@ -1,4 +1,22 @@
-export const products = [
+/**
+ * Product type definition
+ */
+export interface Product {
+    id: number;
+    name: string;
+    price: string;
+    image: string;
+    images?: string[];
+    description?: string;
+    material?: string;
+    size?: string;
+    reviews?: number;
+}
+
+/**
+ * List of products
+ */
+export const products: Product[] = [
     {
         id: 1,
         name: "Oбеци 'Диаманти'",

@@ -1,15 +1,45 @@
-"use client";
-import React from "react";
-import Typography from "@/components/shared/typography";
 
+import React from "react";
+import { Typography } from "../shared/typography";
+
+/**
+ * Props for FeedbackCard component
+ */
 interface FeedbackCardProps {
+    /** Title of the feedback */
     title: string;
+
+    /** Main text or message of the feedback */
     text: string;
+
+    /** Name of the person providing the feedback */
     author: string;
+
+    /** Role or position of the person providing the feedback */
     role: string;
+
+    /** Optional profile image URL */
     image?: string;
 }
-const FeedbackCard: React.FC<FeedbackCardProps> = ({ title, text, author, role, image }) => {
+
+/**
+ * FeedbackCard component
+ *
+ * This component displays a testimonial or feedback from a user,
+ * including title, text, author, role, and optionally a profile image.
+ *
+ * Example usage:
+ * ```tsx
+ * <FeedbackCard
+ *   title="Amazing product!"
+ *   text="I really loved using this. It improved my workflow significantly."
+ *   author="Jane Doe"
+ *   role="Product Manager"
+ *   image="/jane.jpg"
+ * />
+ * ```
+ */
+function FeedbackCard({ title, text, author, role, image }: FeedbackCardProps) {
     return (
         <div className="bg-white border-2 border-purple-500 shadow-md rounded-2xl p-6 text-left hover:shadow-lg transition-shadow duration-300">
             <Typography variant="body" className="text-lg font-semibold text-gray-900 mb-2">
@@ -33,6 +63,6 @@ const FeedbackCard: React.FC<FeedbackCardProps> = ({ title, text, author, role, 
             </div>
         </div>
     );
-};
+}
 
 export default FeedbackCard;
