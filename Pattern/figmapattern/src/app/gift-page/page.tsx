@@ -1,12 +1,30 @@
-"use client";
 import React from "react";
-import Typography from "@/components/shared/typography";
+import { Typography } from "@/components/shared/typography";
 import Button from "@/components/shared/buttons";
 import Link from "next/link";
 
+/**
+ * GiftPage Component
+ *
+ * Renders a promotional section encouraging users to discover unique gifts.
+ * The layout is responsive:
+ *  - Desktop: large images positioned around the heading
+ *  - Mobile: adjusted layout with smaller images and typography
+ *
+ * Uses absolute positioning for decorative images and responsive typography.
+ *
+ * @component
+ * @example
+ * import GiftPage from "@/components/pages/gift-page";
+ *
+ * function HomePage() {
+ *   return <GiftPage />;
+ * }
+ */
 function GiftPage() {
     return (
         <>
+
             <div className="hidden md:block">
                 <div className="bg-white py-48 flex flex-col items-center text-center relative">
                     <img src="/envelope.png" alt="envelope" className="absolute top-6 left-32 w-28 md:w-40 rounded-xl shadow-lg" />

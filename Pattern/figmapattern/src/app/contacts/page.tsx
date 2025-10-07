@@ -1,12 +1,34 @@
 import React from "react";
-import Typography from "@/components/shared/typography";
+import { Typography } from "@/components/shared/typography";
 import Button from "@/components/shared/buttons";
 import { Mail, Phone, MapPin } from "lucide-react";
 
-const ContactPage = () => {
+/**
+ * ContactPage Component
+ *
+ * This component renders the **Contact** page for Great.bg.
+ * It provides users with contact information (email, phone, and address)
+ * and includes a styled contact form where they can send messages.
+ *
+ * The layout is responsive and uses TailwindCSS for styling,
+ * with dark mode support and icon components from `lucide-react`.
+ *
+ * @component
+ * @example
+ * // Example usage:
+ * import ContactPage from "@/pages/contact";
+ *
+ * function App() {
+ *   return <ContactPage />;
+ * }
+ *
+ * @returns {JSX.Element} The rendered contact page with contact details and a message form.
+ */
+function ContactPage()  {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-6">
             <div className="w-full max-w-4xl bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 md:p-10 border border-gray-200 dark:border-gray-700">
+
 
                 <Typography
                     variant="heading"
@@ -14,6 +36,8 @@ const ContactPage = () => {
                 >
                     Контакти
                 </Typography>
+
+
                 <Typography
                     variant="body"
                     className="text-center text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto"
@@ -21,14 +45,16 @@ const ContactPage = () => {
                     Свържете се с нас по всяко време. Попълнете формата или използвайте някой от начините за връзка по-долу.
                 </Typography>
 
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 text-center">
                     <div className="flex flex-col items-center">
                         <Mail className="w-8 h-8 text-blue-500 mb-3" />
                         <Typography variant="subheading">Имейл</Typography>
                         <Typography variant="body" className="text-gray-600 dark:text-gray-300">
-                        office@ada-soft.bg
+                            office@ada-soft.bg
                         </Typography>
                     </div>
+
                     <div className="flex flex-col items-center">
                         <Phone className="w-8 h-8 text-blue-500 mb-3" />
                         <Typography variant="subheading">Телефон</Typography>
@@ -36,6 +62,7 @@ const ContactPage = () => {
                             📞 +359 886 299 300
                         </Typography>
                     </div>
+
                     <div className="flex flex-col items-center">
                         <MapPin className="w-8 h-8 text-blue-500 mb-3" />
                         <Typography variant="subheading">Адрес</Typography>
@@ -45,7 +72,9 @@ const ContactPage = () => {
                     </div>
                 </div>
 
+
                 <form className="space-y-6">
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">
@@ -79,6 +108,7 @@ const ContactPage = () => {
                             placeholder="Напишете вашето съобщение..."
                         ></textarea>
                     </div>
+
 
                     <div className="flex justify-center">
                         <Button

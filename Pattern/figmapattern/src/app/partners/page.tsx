@@ -1,7 +1,18 @@
 import React from "react";
-import Typography from "@/components/shared/typography";
+import { Typography } from "@/components/shared/typography";
 
-const partners = [
+/**
+ * Partner interface
+ */
+interface Partner {
+    name: string;
+    logo: string;
+}
+
+/**
+ * Static list of partner companies
+ */
+const partners: Partner[] = [
     { name: "TechNova", logo: "/company1.png" },
     { name: "GreenWave", logo: "/company2.png" },
     { name: "SkyWorks", logo: "/company3.png" },
@@ -10,9 +21,26 @@ const partners = [
     { name: "NextEra", logo: "/company6.png" },
 ];
 
+/**
+ * PartnersPage Component
+ *
+ * Displays a grid of partner logos with a heading and a call-to-action
+ * for users who want to become partners.
+ *
+ * @component
+ * @example
+ * import PartnersPage from "@/app/partners/page";
+ *
+ * function App() {
+ *   return <PartnersPage />;
+ * }
+ *
+ * @returns {JSX.Element} Rendered partners section page
+ */
 const PartnersPage = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-16 px-6 flex flex-col items-center">
+            
             <Typography
                 variant="heading"
                 className="text-center text-3xl md:text-4xl font-semibold mb-6"
@@ -20,15 +48,17 @@ const PartnersPage = () => {
                 Нашите Партньори
             </Typography>
 
+
             <Typography
                 variant="body"
                 className="text-center text-gray-600 dark:text-gray-300 max-w-2xl mb-12"
             >
-                Работим с водещи компании, които споделят нашите ценности и стремеж към качество.
+                Ние си сътрудничим с водещи компании, които споделят нашите ценности и ангажимент към качеството.
             </Typography>
 
+
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl w-full place-items-center">
-                {partners.map((partner) => (
+                {partners.map((partner: Partner) => (
                     <div
                         key={partner.name}
                         className="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center p-6 w-40 h-40"
@@ -53,7 +83,7 @@ const PartnersPage = () => {
                     variant="body"
                     className="text-gray-600 dark:text-gray-300 mb-6"
                 >
-                    Свържете се с нас и открийте възможностите за съвместна работа.
+                    Свържете се с нас, за да обсъдим възможностите за сътрудничество и как можем да работим заедно.
                 </Typography>
                 <a
                     href="/contact"

@@ -4,50 +4,67 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { Search, Menu, X, User, ShoppingBag } from "lucide-react";
-import  Logo  from "../shared/gift-icon";
+import Logo from "../shared/gift-icon";
 import Button from "../shared/buttons";
+import { Typography } from "../shared/typography";
 
+/**
+ * Navigation links for the header
+ */
 const navLinks = [
     { href: "/main-page", label: "Продукти" },
     { href: "/blog", label: "Блог" },
-    { href: "/special-request", label: "Специален Допит" },
+    { href: "/special-request", label: "Специален допир" },
     { href: "/partners", label: "Партньори" },
-    { href: "/corporate-clients", label: "Корпоративни Клиенти" },
+    { href: "/corporate-clients", label: "Корпоративни клиенти" },
     { href: "/contacts", label: "Контакти" },
 ];
 
+/**
+ * Header Component
+ *
+ * Renders the site header with logo, navigation links, search input, user and cart buttons,
+ * and a mobile menu toggle. Adapts to desktop and mobile layouts.
+ *
+ * Features:
+ * - Logo links to the main page
+ * - Search input with Enter key navigation
+ * - Active link highlighting
+ * - Shopping bag with badge
+ * - User profile button
+ * - Mobile responsive menu toggle
+ *
+ * @component
+ * @returns {JSX.Element} Header section
+ */
 function Header() {
-    const [search, setSearch] = useState("");
     const [mobileMenu, setMobileMenu] = useState(false);
     const [searchFocused, setSearchFocused] = useState(false);
     const router = useRouter();
+    const pathname = usePathname(); 
     const cartCount = 1;
-
-    const handleSearch = () => {
-        if (search.trim())
-            router.push(`/search?query=${encodeURIComponent(search)}`);
-    };
 
     return (
         <header className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50">
+
             <div className="max-w-[1400px] mx-auto flex items-center justify-between gap-2 px-4 py-3">
+
                 <Link href="/main-page" className="ml-auto flex items-center gap-2 cursor-pointer">
                     <Logo size={36} />
-                    <h1 className="text-2xl font-bold text-gray-900 dark:text-white hover:text-blue-600 transition-colors">
+                    <Typography className="text-2xl font-bold text-gray-900 dark:text-white hover:text-blue-600 transition-colors">
                         Great.bg
-                    </h1>
+                    </Typography>
                 </Link>
+
                 <nav className="hidden md:flex items-center gap-2">
                     {navLinks.map((link) => {
-                        const pathname = usePathname();
                         const isActive = pathname === link.href;
 
                         return (
                             <Link key={link.href} href={link.href} passHref>
                                 <Button
                                     variant="secondary"
-                                    className={`text-sm font-medium transition-colors ${isActive ? "text-black dark:text-white font-bold" : "text-gray-400 dark:text-gray-500"
-                                        }`}
+                                    className={`text-sm font-medium transition-colors ${isActive ? "text-black dark:text-white font-bold" : "text-gray-400 dark:text-gray-500"}`}
                                 >
                                     {link.label}
                                 </Button>
@@ -56,16 +73,11 @@ function Header() {
                     })}
                 </nav>
 
-
-
                 <div className="hidden md:flex items-center gap-1">
                     <div className="relative w-[180px]">
                         <Search size={18} className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500" />
                         <input
                             type="text"
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                            onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                             onFocus={() => setSearchFocused(true)}
                             onBlur={() => setSearchFocused(false)}
                             placeholder="Търси тук..."
@@ -79,9 +91,9 @@ function Header() {
                     >
                         <ShoppingBag size={24} />
                         {cartCount > 0 && (
-                            <span className="absolute -top-1 -right-1 bg-red-500 border-2 border-white text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                            <Typography className="absolute -top-1 -right-1 bg-red-500 border-2 border-white text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                                 {cartCount}
-                            </span>
+                            </Typography>
                         )}
                     </Button>
 
@@ -94,13 +106,11 @@ function Header() {
                 </div>
 
                 <div className="flex items-center md:hidden w-full">
+
                     <div className="flex-1 relative transition-all duration-200">
                         <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
                         <input
                             type="text"
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                            onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                             onFocus={() => setSearchFocused(true)}
                             onBlur={() => setTimeout(() => setSearchFocused(false), 150)}
                             placeholder="Търси тук..."
@@ -116,9 +126,9 @@ function Header() {
                             >
                                 <ShoppingBag size={24} />
                                 {cartCount > 0 && (
-                                    <span className="absolute -top-0.5 -right-0.5 bg-red-500 border-2 border-white text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                                    <Typography className="absolute -top-0.5 -right-0.5 bg-red-500 border-2 border-white text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                                         {cartCount}
-                                    </span>
+                                    </Typography>
                                 )}
                             </Button>
 
@@ -143,14 +153,12 @@ function Header() {
             {mobileMenu && (
                 <div className="md:hidden bg-white dark:bg-gray-900 shadow-md px-4 py-3 flex flex-col gap-2">
                     {navLinks.map((link) => {
-                        const pathname = usePathname();
                         const isActive = pathname === link.href;
 
                         return (
                             <Link key={link.href} href={link.href} passHref>
                                 <Button
-                                    className={`text-left w-full bg-transparent px-0 py-0 transition-colors ${isActive ? "text-black font-bold" : "text-gray-400"
-                                        }`}
+                                    className={`text-left w-full bg-transparent px-0 py-0 transition-colors ${isActive ? "text-black font-bold" : "text-gray-400"}`}
                                     variant="secondary"
                                 >
                                     {link.label}
@@ -160,10 +168,8 @@ function Header() {
                     })}
                 </div>
             )}
-
         </header>
     );
-
 }
 
 export default Header;

@@ -1,41 +1,68 @@
-// components/Footer/FooterMiddle.tsx
-interface FooterMiddleProps {
+import { Typography } from "../shared/typography";
+
+interface FooterLinksProps {
+    /** If true, renders a mobile-friendly layout with fewer columns */
     isMobile?: boolean;
 }
 
-function FooterLink({ isMobile }: FooterMiddleProps) {
+/**
+ * FooterLink Component
+ *
+ * Renders a list of product categories and useful links in the footer.
+ * The layout changes depending on whether `isMobile` is true:
+ *  - Mobile: Only left and middle columns are displayed side by side
+ *  - Desktop: Left, middle, and right columns are displayed
+ *
+ * @component
+ * @param {FooterLinksProps} props
+ * @param {boolean} [props.isMobile] - Optional flag to render the mobile version
+ *
+ * @example
+ * // Desktop usage:
+ * <FooterLink />
+ *
+ * // Mobile usage:
+ * <FooterLink isMobile />
+ *
+ * @returns {JSX.Element} Footer links section
+ */
+function FooterLink({ isMobile }: FooterLinksProps) {
     const leftColumn = (
         <>
-            <h3 className={isMobile ? "text-base font-semibold mb-3" : "text-lg font-semibold mb-4"}>Продукти</h3>
+            <Typography className={isMobile ? "text-base font-semibold mb-3" : "text-lg font-semibold mb-4"}>
+                Products
+            </Typography>
             <ul className={isMobile ? "space-y-1 text-gray-600 text-sm" : "space-y-2 text-gray-600"}>
-                <li>Картички</li>
-                <li>Чаши</li>
-                <li>Картини</li>
-                <li>Играчки</li>
+                <li>Cards</li>
+                <li>Mugs</li>
+                <li>Paintings</li>
+                <li>Toys</li>
             </ul>
         </>
     );
 
     const middleColumn = (
         <>
-            <h3 className={isMobile ? "text-base font-semibold mb-3" : "text-lg font-semibold mb-4"}>&nbsp;</h3>
+            <Typography className={isMobile ? "text-base font-semibold mb-3" : "text-lg font-semibold mb-4"}>&nbsp;</Typography>
             <ul className={isMobile ? "space-y-1 text-gray-600 text-sm" : "space-y-2 text-gray-600"}>
-                <li>Бижута</li>
-                <li>Текстили</li>
-                <li>Декорации</li>
-                <li>Други</li>
+                <li>Jewelry</li>
+                <li>Textiles</li>
+                <li>Decor</li>
+                <li>Others</li>
             </ul>
         </>
     );
 
     const rightColumn = (
         <>
-            <h3 className={isMobile ? "text-base font-semibold mb-3" : "text-lg font-semibold mb-4"}>Полезни линкове</h3>
+            <Typography className={isMobile ? "text-base font-semibold mb-3" : "text-lg font-semibold mb-4"}>
+                Useful Links
+            </Typography>
             <ul className={isMobile ? "space-y-1 text-gray-600 text-sm" : "space-y-2 text-gray-600"}>
-                <li>Доставка</li>
-                <li>Моят профил</li>
-                <li>Срокове</li>
-                <li>Общи условия</li>
+                <li>Shipping</li>
+                <li>My Profile</li>
+                <li>Deadlines</li>
+                <li>Terms & Conditions</li>
             </ul>
         </>
     );
@@ -57,4 +84,5 @@ function FooterLink({ isMobile }: FooterMiddleProps) {
         </div>
     );
 }
+
 export default FooterLink;

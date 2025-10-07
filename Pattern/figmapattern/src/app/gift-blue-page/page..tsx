@@ -1,11 +1,27 @@
-"use client";
 import React from "react";
-import Typography from "@/components/shared/typography";
+import { Typography } from "@/components/shared/typography";
 
+/**
+ * GiftPageBlue Component
+ *
+ * Renders a promotional section with a blue background showcasing gift items.
+ * This component displays differently for desktop and mobile:
+ *  - Desktop: large images positioned around the heading
+ *  - Mobile: smaller images with adjusted layout for smaller screens
+ *
+ * Uses absolute positioning for decorative images and responsive typography.
+ *
+ * @component
+ * @example
+ * import GiftPageBlue from "@/components/pages/gift-page-blue";
+ *
+ * function HomePage() {
+ *   return <GiftPageBlue />;
+ * }
+ */
 function GiftPageBlue() {
     return (
         <>
-            {/* Desktop */}
             <div className="hidden md:block">
                 <div className="relative bg-blue-300 py-48">
                     <div className="relative text-center max-w-3xl mx-auto px-4 z-10">
@@ -39,7 +55,6 @@ function GiftPageBlue() {
                 </div>
             </div>
 
-            {/* Mobile */}
             <div className="block md:hidden">
                 <div className="relative bg-blue-300 py-28">
                     <div className="relative text-center max-w-xl mx-auto px-4 z-10">

@@ -1,11 +1,29 @@
-"use client";
 import Link from "next/link";
 import React from "react";
-import Typography from "@/components/shared/typography";
+import { Typography } from "@/components/shared/typography";
 import { Handshake, Lightbulb, Award } from "lucide-react";
 
-
-const FeaturesSection: React.FC = () => {
+/**
+ * FeaturesSection Component
+ *
+ * This component displays the "What Makes Us Different" section on the homepage.
+ * It highlights the unique features of Great.bg, such as artisan support, uniqueness, and high quality.
+ * Each feature is represented by an icon, title, and description.
+ *
+ * Layout is responsive and styled with TailwindCSS.
+ *
+ * @component
+ * @example
+ * // Example usage:
+ * import FeaturesSection from "@/components/sections/features";
+ *
+ * function HomePage() {
+ *   return <FeaturesSection />;
+ * }
+ *
+ * @returns {JSX.Element} The rendered features section with icons, titles, and descriptions.
+ */
+function FeaturesSection() {
     const features = [
         {
             title: "Подкрепа на занаятчии",
@@ -23,7 +41,6 @@ const FeaturesSection: React.FC = () => {
             icon: <Award className="w-8 h-8 text-purple-600 mx-auto mb-2" />,
         },
     ];
-
 
     return (
         <div className="my-16 flex flex-col items-center relative">
@@ -47,8 +64,6 @@ const FeaturesSection: React.FC = () => {
                                 strokeDasharray="6 4"
                                 fill="transparent"
                             />
-
-
                             <path
                                 d="M45 60 L40 80 L60 70"
                                 stroke="#2563EB"
@@ -57,23 +72,21 @@ const FeaturesSection: React.FC = () => {
                                 strokeLinecap="round"
                             />
                         </svg>
-
-
-
                     </Typography>
                 </div>
 
                 <div className="mt-6">
                     <Link href='/products' className="text-blue-600 hover:underline font-medium">
-                    <span className="px-8 py-3 bg-blue-600 text-white text-5xl font-bold rounded-full transform -rotate-3 inline-block">
-                        Great<span className="text-white text-3xl font-normal">.bg</span>   
-                    </span>
+                        <span className="px-8 py-3 bg-blue-600 text-white text-5xl font-bold rounded-full transform -rotate-3 inline-block">
+                            Great<span className="text-white text-3xl font-normal">.bg</span>
+                        </span>
                     </Link>
-                    <span className="absolute  top-2/3 -translate-y-1/2 text-5xl font-bold text-gray-800">
+                    <span className="absolute top-2/3 -translate-y-1/2 text-5xl font-bold text-gray-800">
                         ?
                     </span>
                 </div>
             </div>
+
 
             <div className="grid grid-cols-1 md:grid-cols-3 text-center">
                 {features.map((feature, index) => (
@@ -90,6 +103,6 @@ const FeaturesSection: React.FC = () => {
 
         </div>
     );
-};
+}
 
 export default FeaturesSection;
