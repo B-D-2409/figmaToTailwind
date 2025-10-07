@@ -8,10 +8,10 @@ The original Figma design file can be accessed here:
 [Figma Design for Great.bg](https://www.figma.com/design/IewHNgfcykduIDA5KT1rMm/Great.bg?node-id=315-698&t=dBBJSEJup8f1IpDo-1)
 
 ## Demo
-<p align="center">
-  <img src="public/screenshot-greatbg3.jpg" alt="screenshot-greatbg3.jpg width="250"/>
-  <img src="public/screenshot-greatbg2.jpg" alt="screenshot-greatbg2.jpg" width="250"/>
-  <img src="public/screenshot-greatbg.jpg" alt="screenshot-greatbg.jpg" width="250"/>
+<p align="center" style="display: flex; justify-content: center; gap: 10px;">
+  <img src="public/screenshot-greatbg3.jpg" alt="screenshot-greatbg3" width="230" height="150" style="object-fit: cover; border-radius: 8px;"/>
+  <img src="public/screenshot-greatbg2.jpg" alt="screenshot-greatbg2" width="230" height="150" style="object-fit: cover; border-radius: 8px;"/>
+  <img src="public/screenshot-greatbg.jpg" alt="screenshot-greatbg" width="230" height="150" style="object-fit: cover; border-radius: 8px;"/>
 </p>
 
 
