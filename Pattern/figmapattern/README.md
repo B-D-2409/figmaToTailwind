@@ -6,12 +6,12 @@ Great.bg is a modern web application built with **Next.js** and **Tailwind CSS**
 ## Figma Design
 The original Figma design file can be accessed here:  
 [Figma Design for Great.bg](https://www.figma.com/design/IewHNgfcykduIDA5KT1rMm/Great.bg?node-id=315-698&t=dBBJSEJup8f1IpDo-1)
-## Demo
 
+## Demo
 <p align="center">
-  <img src="public/screenshot-greatbg.jpg" alt="screenshot-greatbg.jpg" width="250"/>
-  <img src="public/screenshot-greatbg2.jpg" alt="screenshot-greatbg2.jpg" width="250"/>
   <img src="public/screenshot-greatbg3.jpg" alt="screenshot-greatbg3.jpg width="250"/>
+  <img src="public/screenshot-greatbg2.jpg" alt="screenshot-greatbg2.jpg" width="250"/>
+  <img src="public/screenshot-greatbg.jpg" alt="screenshot-greatbg.jpg" width="250"/>
 </p>
 
 
