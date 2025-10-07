@@ -26,21 +26,21 @@ const ContactPage = () => {
                         <Mail className="w-8 h-8 text-blue-500 mb-3" />
                         <Typography variant="subheading">Имейл</Typography>
                         <Typography variant="body" className="text-gray-600 dark:text-gray-300">
-                            info@mycompany.bg
+                        office@ada-soft.bg
                         </Typography>
                     </div>
                     <div className="flex flex-col items-center">
                         <Phone className="w-8 h-8 text-blue-500 mb-3" />
                         <Typography variant="subheading">Телефон</Typography>
                         <Typography variant="body" className="text-gray-600 dark:text-gray-300">
-                            +359 888 123 456
+                            📞 +359 886 299 300
                         </Typography>
                     </div>
                     <div className="flex flex-col items-center">
                         <MapPin className="w-8 h-8 text-blue-500 mb-3" />
                         <Typography variant="subheading">Адрес</Typography>
                         <Typography variant="body" className="text-gray-600 dark:text-gray-300">
-                            ул. Примерна 42, София, България
+                            Poligona, bl.43, ent.1-Offices, Office 5 Sofia 1750, Bulgaria
                         </Typography>
                     </div>
                 </div>

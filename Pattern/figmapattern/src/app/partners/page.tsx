@@ -1,14 +1,13 @@
 import React from "react";
 import Typography from "@/components/shared/typography";
-import Image from "next/image";
 
 const partners = [
-    { name: "TechNova", logo: "/images/partners/technova.png" },
-    { name: "GreenWave", logo: "/images/partners/greenwave.png" },
-    { name: "SkyWorks", logo: "/images/partners/skyworks.png" },
-    { name: "ArtVision", logo: "/images/partners/artvision.png" },
-    { name: "BuildCore", logo: "/images/partners/buildcore.png" },
-    { name: "NextEra", logo: "/images/partners/nextera.png" },
+    { name: "TechNova", logo: "/company1.png" },
+    { name: "GreenWave", logo: "/company2.png" },
+    { name: "SkyWorks", logo: "/company3.png" },
+    { name: "ArtVision", logo: "/company4.png" },
+    { name: "BuildCore", logo: "/company5.png" },
+    { name: "NextEra", logo: "/company6.png" },
 ];
 
 const PartnersPage = () => {
@@ -28,18 +27,16 @@ const PartnersPage = () => {
                 Работим с водещи компании, които споделят нашите ценности и стремеж към качество.
             </Typography>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 max-w-6xl w-full place-items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl w-full place-items-center">
                 {partners.map((partner) => (
                     <div
                         key={partner.name}
                         className="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center p-6 w-40 h-40"
                     >
-                        <Image
+                        <img
                             src={partner.logo}
                             alt={partner.name}
-                            width={120}
-                            height={120}
-                            className="object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                            className="object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300 w-30 h-30"
                         />
                     </div>
                 ))}
