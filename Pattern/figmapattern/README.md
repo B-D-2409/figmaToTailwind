@@ -9,9 +9,9 @@ The original Figma design file can be accessed here:
 ## Demo
 
 <p align="center">
-  <img src="/screenshot-greatbg.jpg" alt="screenshot-greatbg.jpg" width="250"/>
-  <img src="/screenshot-greatbg2.jpg" alt="screenshot-greatbg2.jpg" width="250"/>
-  <img src="/screenshot-greatbg3.jpg" alt="screenshot-greatbg3.jpg width="250"/>
+  <img src="public/screenshot-greatbg.jpg" alt="screenshot-greatbg.jpg" width="250"/>
+  <img src="public/screenshot-greatbg2.jpg" alt="screenshot-greatbg2.jpg" width="250"/>
+  <img src="public/screenshot-greatbg3.jpg" alt="screenshot-greatbg3.jpg width="250"/>
 </p>
 
 
