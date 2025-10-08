@@ -35,7 +35,7 @@ function FooterContacts({ isMobile }: FooterContactsProps) {
                         : "text-lg font-semibold mb-4"
                 }
             >
-                Contacts
+                Контакти
             </h3>
 
             <ul

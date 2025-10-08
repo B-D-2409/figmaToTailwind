@@ -5,38 +5,17 @@ interface FooterLinksProps {
     isMobile?: boolean;
 }
 
-/**
- * FooterLink Component
- *
- * Renders a list of product categories and useful links in the footer.
- * The layout changes depending on whether `isMobile` is true:
- *  - Mobile: Only left and middle columns are displayed side by side
- *  - Desktop: Left, middle, and right columns are displayed
- *
- * @component
- * @param {FooterLinksProps} props
- * @param {boolean} [props.isMobile] - Optional flag to render the mobile version
- *
- * @example
- * // Desktop usage:
- * <FooterLink />
- *
- * // Mobile usage:
- * <FooterLink isMobile />
- *
- * @returns {JSX.Element} Footer links section
- */
 function FooterLink({ isMobile }: FooterLinksProps) {
     const leftColumn = (
         <>
             <Typography className={isMobile ? "text-base font-semibold mb-3" : "text-lg font-semibold mb-4"}>
-                Products
+                Продукти
             </Typography>
             <ul className={isMobile ? "space-y-1 text-gray-600 text-sm" : "space-y-2 text-gray-600"}>
-                <li>Cards</li>
-                <li>Mugs</li>
-                <li>Paintings</li>
-                <li>Toys</li>
+                <li>Картички</li>
+                <li>Чаши</li>
+                <li>Картини</li>
+                <li>Играчки</li>
             </ul>
         </>
     );
@@ -45,10 +24,10 @@ function FooterLink({ isMobile }: FooterLinksProps) {
         <>
             <Typography className={isMobile ? "text-base font-semibold mb-3" : "text-lg font-semibold mb-4"}>&nbsp;</Typography>
             <ul className={isMobile ? "space-y-1 text-gray-600 text-sm" : "space-y-2 text-gray-600"}>
-                <li>Jewelry</li>
-                <li>Textiles</li>
-                <li>Decor</li>
-                <li>Others</li>
+                <li>Бижута</li>
+                <li>Текстили</li>
+                <li>Декорации</li>
+                <li>Други</li>
             </ul>
         </>
     );
@@ -56,13 +35,13 @@ function FooterLink({ isMobile }: FooterLinksProps) {
     const rightColumn = (
         <>
             <Typography className={isMobile ? "text-base font-semibold mb-3" : "text-lg font-semibold mb-4"}>
-                Useful Links
+                Полезни линкове
             </Typography>
             <ul className={isMobile ? "space-y-1 text-gray-600 text-sm" : "space-y-2 text-gray-600"}>
-                <li>Shipping</li>
-                <li>My Profile</li>
-                <li>Deadlines</li>
-                <li>Terms & Conditions</li>
+                <li>Доставка</li>
+                <li>Моят профил</li>
+                <li>Срокове</li>
+                <li>Общи условия</li>
             </ul>
         </>
     );
